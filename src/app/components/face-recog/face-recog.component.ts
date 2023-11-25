@@ -86,7 +86,7 @@ export class FaceRecogComponent implements OnInit {
       // Set display: none for canvasRef element
       this.renderer.setStyle(this.canvasRef.nativeElement, 'display', 'none');
       this.clicked = !this.clicked;
-    }, 1500);
+    }, 2000);
   }
 
   handleBack() {
