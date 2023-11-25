@@ -1,11 +1,11 @@
-<div *ngIf="!show" class="bank">
+<div class="bank">
+  <img src="assets/menu.png"/>
+  <div class="content">
+    <img class="face-icon" src="assets/face.svg"/>
+    <p class="m-0">Face Pay</p>
+  </div>
   <div class="logo">
     <img src="assets/bcc.svg"/>
   </div>
-  <div class="content">
-    <img class="face-icon" (click)="handleFaceClick()" src="assets/face.svg"/>
-    <p class="m-0">Face Pay</p>
-  </div>
 </div>
-<button *ngIf="show" class="back-button" (click)="handleBack()">Назад</button>
-<app-pay *ngIf="show"></app-pay>
+<app-pay></app-pay>
