@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild, inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import * as faceapi from 'face-api.js';
 
 @Component({
@@ -10,19 +10,23 @@ import * as faceapi from 'face-api.js';
 export class FaceRecogComponent implements OnInit {
 
   pay = false;
+  clicked = false;
   router = inject(Router);
 
   WIDTH = 440;
   HEIGHT = 280;
   @ViewChild('video',{ static: true }) public video!: ElementRef;
   @ViewChild('canvas',{ static: true }) public canvasRef!: ElementRef;
-  constructor(private elRef: ElementRef, private renderer: Renderer2) {}stream: any;
+  constructor(private elRef: ElementRef, private renderer: Renderer2, private route: ActivatedRoute) {}
+  stream: any;
   detection: any;
   resizedDetections: any;
   canvas: any;
   canvasEl: any;
   displaySize: any;
   videoInput: any;
+
+  money: number = 0;
 
   async ngOnInit() {
     await Promise.all(
@@ -72,12 +76,17 @@ export class FaceRecogComponent implements OnInit {
     });
   }
 
-  handleSubmit() {
-    this.pay = !this.pay;
-    this.renderer.setStyle(this.video.nativeElement, 'display', 'none');
-
-    // Set display: none for canvasRef element
+  async handleSubmit() {
+    this.clicked = !this.clicked;
     this.renderer.setStyle(this.canvasRef.nativeElement, 'display', 'none');
+    await setTimeout(() => {
+      this.pay = !this.pay;
+      this.renderer.setStyle(this.video.nativeElement, 'display', 'none');
+
+      // Set display: none for canvasRef element
+      this.renderer.setStyle(this.canvasRef.nativeElement, 'display', 'none');
+      this.clicked = !this.clicked;
+    }, 1500);
   }
 
   handleBack() {

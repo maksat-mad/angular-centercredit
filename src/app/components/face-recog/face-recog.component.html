@@ -1,5 +1,5 @@
 <div class="face-recog">
-  <div class="video-container">
+  <div class="video-container" [ngStyle]="{'filter': clicked ? 'blur(3px)' : 'none'}">
     <video #video
       [width]="WIDTH"
       [height]="HEIGHT"
@@ -7,6 +7,7 @@
       muted>
     </video>
     <div #canvas></div>
+    <div *ngIf="clicked" class="lds-dual-ring"></div>
     <div *ngIf="pay" class="success">
       Оплачено успешно
     </div>
