@@ -1,0 +1,16 @@
+<div class="face-recog">
+  <div class="video-container">
+    <video #video
+      [width]="WIDTH"
+      [height]="HEIGHT"
+      autoplay
+      muted>
+    </video>
+    <div #canvas></div>
+    <div *ngIf="pay" class="success">
+      Оплачено успешно
+    </div>
+  </div>
+  <button *ngIf="!pay" class="button button1" (click)="handleSubmit()">Оплатить</button>
+  <button class="back-button" (click)="handleBack()">Назад</button>
+</div>
