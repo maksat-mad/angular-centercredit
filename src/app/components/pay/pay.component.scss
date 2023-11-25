@@ -40,7 +40,7 @@
   align-items: center;
 }
 
-input[type=text] {
+.pay-input {
   width: 150px;
   padding: 12px 20px;
   margin: 8px 0;
@@ -55,6 +55,17 @@ input[type=text] {
   text-align: center;
 }
 
-input[type=text]:focus {
+.pay-input:focus {
   border: 3px solid #27AE60;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
