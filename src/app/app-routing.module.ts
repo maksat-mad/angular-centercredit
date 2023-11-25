@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { QrCodeComponent } from './components/qr-code/qr-code.component';
 import { FaceRecogComponent } from './components/face-recog/face-recog.component';
 import { HomeComponent } from './components/home/home.component';
+import { PayComponent } from './components/pay/pay.component';
 
 const routes: Routes = [
   {
@@ -10,11 +10,11 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'qr',
-    component: QrCodeComponent,
+    path: 'pay',
+    component: PayComponent,
   },
   {
-    path: 'face',
+    path: 'pay/face',
     component: FaceRecogComponent,
   },
 ];
