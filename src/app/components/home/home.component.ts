@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  show = false;
 
+  handleFaceClick() {
+    this.show = !this.show;
+  }
+
+  handleBack() {
+    this.show = !this.show;
+  }
 }

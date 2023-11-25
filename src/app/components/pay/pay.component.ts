@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pay',
@@ -6,5 +7,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./pay.component.scss']
 })
 export class PayComponent {
-
 }
