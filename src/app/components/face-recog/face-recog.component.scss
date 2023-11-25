@@ -40,6 +40,18 @@
   cursor: pointer;
 }
 
+.success-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.success-icon {
+  width: 40px;
+}
+
 .success {
   color: #27AE60;
   font-weight: 500;

@@ -8,8 +8,11 @@
     </video>
     <div #canvas></div>
     <div *ngIf="clicked" class="lds-dual-ring"></div>
-    <div *ngIf="pay" class="success">
-      Оплачено успешно
+    <div *ngIf="pay" class="success-div">
+      <img class="success-icon" src="assets/correct.svg"/>
+      <div class="success">
+        Оплачено успешно
+      </div>
     </div>
   </div>
   <button *ngIf="!pay" class="button button1" (click)="handleSubmit()">Оплатить</button>
